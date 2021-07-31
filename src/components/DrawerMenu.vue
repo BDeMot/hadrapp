@@ -69,7 +69,7 @@
 
     &--bar{
       display: block;
-      height: 3px;
+      height: .5vh;
       width: 35px;
       background-color: #29BB3E;
       margin: 2px;
