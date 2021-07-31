@@ -32,12 +32,15 @@ export default {
     margin-top: 30px;
     &__menu {
       background-color: #AFF0B8;
+      font-weight: bold;
       height: 60px;
       width: 70%;
+      max-width: 200px;
       margin: 10px;
       font-size: 2em;
       border: 0;
       border-radius: 100px;
+      color: #014900
     }
   }
 </style>

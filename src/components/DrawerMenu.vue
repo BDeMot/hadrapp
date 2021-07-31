@@ -28,6 +28,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     width: 70%;
+    max-width: 300px;
     height: 70%;
     position: fixed;
     right: 0;
@@ -38,7 +39,6 @@
     & a{
       color: #014900;
       font-weight: bold;
-
       display: flex;
       justify-content: center;
       align-items: center;
