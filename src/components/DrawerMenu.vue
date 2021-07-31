@@ -57,8 +57,8 @@
     align-items: center;
     flex-direction: column;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     background-color: #AFF0B8;
     position: absolute;
     right: 10px;
@@ -69,8 +69,8 @@
 
     &--bar{
       display: block;
-      height: 2px;
-      width: 25px;
+      height: 3px;
+      width: 35px;
       background-color: #29BB3E;
       margin: 2px;
     }
