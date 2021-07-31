@@ -1,6 +1,7 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
+    <img alt="burhaniya logo" width="150" src="../assets/logo.jpg">
+    <h1>Hadrapp</h1>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
