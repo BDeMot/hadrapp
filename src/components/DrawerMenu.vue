@@ -29,11 +29,12 @@
     justify-content: space-evenly;
     width: 70%;
     height: 70%;
-    position: absolute;
-    right: -100%;
-    top: 60px;
+    position: fixed;
+    right: 0;
+    top: 50px;
+    transform: translateX(100%);
     box-shadow: -2px 0px 6px 1px rgba(0, 0, 0, 0.2);
-    transition: all .5s;
+    transition: all .3s;
     & a{
       color: #014900;
       font-weight: bold;
@@ -42,7 +43,6 @@
       justify-content: center;
       align-items: center;
       height: 50px;
-
       text-decoration: none;
       font-size: 2em;
         &.router-link-exact-active {
@@ -64,8 +64,7 @@
     right: 10px;
     top: 10px;
     &:hover + .nav__drawer{
-      position: absolute;
-      right: 0;
+      transform: translateX(0);
     }
 
     &--bar{
