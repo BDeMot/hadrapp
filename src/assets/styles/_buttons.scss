@@ -1,0 +1,46 @@
+.menus{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  & .main-button {
+    background-color: $background-color;
+    border: none;
+    border-radius: 100px;
+    height: 60px;
+    width: 300px;
+    margin: 10px;
+    position: relative;
+    transition: all 100ms linear;
+    &:hover{
+      background: rgb(175,240,184);
+      background: linear-gradient(150deg, rgba(175,240,184,1) 35%, rgba(234,223,124,1) 100%);
+    }
+    &::before {
+      content: "";
+      display: block;
+      width: 105%;
+      width: 306px;
+      height: 66px;
+      position: absolute;
+      background: rgb(175,240,184);
+      background: linear-gradient(150deg, rgba(175,240,184,1) 35%, rgba(234,223,124,1) 100%);
+      border-radius: 100px;
+      top: -3px;
+      left: -3px;
+      z-index: -1;
+    }
+    &__links{
+      font-size: 2em;
+      font-weight: bold;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+    // .router-link-exact-active {
+    //   display: none;
+    // }
+  }
+}

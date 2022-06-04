@@ -1,79 +1,60 @@
 <template>
-  <div class="nav">
-    <div class="nav__burger">
-      <div class="nav__burger--bar">
-      </div>
-      <div class="nav__burger--bar">
-      </div>
-      <div class="nav__burger--bar">
-      </div>
+  <input type="checkbox" id="burger-wrapper" class="burger-wrapper" />
+  <label for="burger-wrapper" class="burger">
+    <div class="bars">
+      <span class="bar bar-1"></span>
+      <span class="bar bar-2"></span>
+      <span class="bar bar-3"></span>
     </div>
-    <div class="nav__drawer">
-      <router-link to="/">Accueil</router-link>
-      <router-link to="/about">Textes</router-link>
-      <router-link to="/about">Leçons</router-link>
-      <router-link to="/about">Audio</router-link>
-    </div>
-  </div>
+  </label>
+
 </template>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.nav {
-  padding: 30px;
+  .bar {
+    transition: all 70ms linear;
+  }
 
-  &__drawer{
-    background-color: rgb(255, 253, 253);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 70%;
-    max-width: 300px;
-    height: 70%;
-    position: fixed;
-    right: 0;
-    top: 50px;
-    transform: translateX(100%);
-    box-shadow: -2px 0px 6px 1px rgba(0, 0, 0, 0.2);
-    transition: all .3s;
-    & a{
-      color: #014900;
-      font-weight: bold;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 50px;
-      text-decoration: none;
-      font-size: 2em;
-        &.router-link-exact-active {
-          color: #42b983;
-    }
+  .burger-wrapper{
+    display: none;
+    &:checked + .burger {
+      & .bar-1 {
+        transform: rotate(45deg) translate(7px, 6px);
+      }
+
+      & .bar-2 {
+        opacity: 0;
+      }
+
+      & .bar-3 {
+        transform: rotate(-45deg) translate(8px, -6px);
+      }
     }
   }
 
-  &__burger{
+  .burger{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 0, 0, 0.493);
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    background-color: #AFF0B8;
     position: absolute;
     right: 10px;
     top: 10px;
-    &:hover + .nav__drawer{
-      transform: translateX(0);
-    }
-
-    &--bar{
-      display: block;
-      height: .5vh;
-      width: 35px;
-      background-color: #29BB3E;
-      margin: 2px;
-    }
+    &>.bars {
+      height: 50%;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      &>span{
+        display: block;
+        height: 5px;
+        width: 100%;
+        background: red;
+      }
+      }
   }
-}
 </style>
