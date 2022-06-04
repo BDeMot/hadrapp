@@ -1,46 +1,24 @@
 <template>
   <div class="home">
     <img alt="burhaniya logo" width="130" src="../assets/logo.jpg">
-    <h1>Hadrapp</h1>
+    <h1 class="title">Hadrapp</h1>
   </div>
   <main class="menus">
-    <button class="menus__menu">
-      Textes
-    </button>
-    <button class="menus__menu">
-      Leçons
-    </button>
-    <button class="menus__menu">
-      Audio
+    <button v-for="(route, index) in nav"
+      :key="index"
+      class="main-button"
+    >
+      <router-link :to="route.path" class="main-button__links">
+        {{ route.name }}
+      </router-link>
     </button>
   </main>
 </template>
 
-<script>
+<script setup>
 // @ is an alias to /src
+  import { ref } from 'vue'
+  import routes from '@/router/routes'
 
-export default {
-  name: 'Home'
-}
+  const nav = ref( routes )
 </script>
-
-<style lang="scss" scoped>
-  .menus{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
-    &__menu {
-      background-color: #AFF0B8;
-      font-weight: bold;
-      height: 60px;
-      width: 70%;
-      max-width: 200px;
-      margin: 10px;
-      font-size: 2em;
-      border: 0;
-      border-radius: 100px;
-      color: #014900
-    }
-  }
-</style>
