@@ -1,4 +1,4 @@
-const pages = ['Home', 'About']
+const pages = require('./pages.json')
 
 const routerinator = (page) => {
   const Page = page[0].toUpperCase() + page.slice(1)
