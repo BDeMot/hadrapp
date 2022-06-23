@@ -9,9 +9,9 @@ fs.readdir(directoryPath, function (err, files) {
   }
 
   const fileNames = files.map(file => file.replace('.vue', ''))
-  const data = JSON.stringify(fileNames)
+  const fileNamesJSON = JSON.stringify(fileNames)
 
-  fs.writeFile('src/router/pages.json', data, (err) => {
+  fs.writeFile('src/router/pages.json', fileNamesJSON, (err) => {
     if (err) throw err;
   })
 })
