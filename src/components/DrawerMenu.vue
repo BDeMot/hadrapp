@@ -6,19 +6,17 @@
       <span class="bar bar-2"></span>
       <span class="bar bar-3"></span>
     </div>
+    <nav class="burger-wrapper__nav menus">
+      <button v-for="(route, index) in nav"
+        :key="index"
+        class="main-button"
+      >
+        <router-link :to="route.path" class="main-button__links">
+          {{ route.name }}
+        </router-link>
+      </button>
+    </nav>
   </label>
-  <nav class="burger-wrapper__nav">
-    <ul>
-        <li v-for="(route, index) in nav"
-          :key="index"
-          class="main-button"
-        >
-      <router-link :to="route.path" class="main-button__links">
-        {{ route.name }}
-      </router-link>
-    </li>
-    </ul>
-  </nav>
 
 </template>
 
@@ -37,6 +35,7 @@
 
   .burger-wrapper{
     display: none;
+
     &:checked {
       + .burger {
         & .bar-1 {
@@ -48,11 +47,11 @@
         }
 
         & .bar-3 {
-          transform: rotate(-45deg) translate(8px, -6px);
+          transform: rotate(-45deg) translate(7px, -5px);
         }
       }
-      &+.burger+.burger-wrapper__nav{
-        transform: translateX§(-100vw);
+      &+.burger .burger-wrapper__nav{
+        display: flex;
       }
     }
     &__nav {
@@ -61,12 +60,14 @@
       background: lightgrey;
       opacity: 90%;
       position: absolute;
-      transform: translateX(100vw);
+      top: -10px;
+      right: -10px;
+      // transform: translateX(100vw);
       // transition: 500ms;
       font-size: 58px;
-      display: flex;
+      display: none;
       align-items: center;
-      justify-content: space-evenly;
+      justify-content: center;
       z-index: 100;
     }
   }
@@ -89,9 +90,9 @@
       z-index: 1000;
       &>span{
         display: block;
-        height: 5px;
+        height: 2px;
         width: 100%;
-        background: red;
+        background: #2C7C46;
       }
       }
   }
